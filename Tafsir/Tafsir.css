@@ -1,0 +1,356 @@
+.tafsir-page {
+  padding-top: 100px;
+  padding-bottom: 80px;
+  background-color: #f7f5f0; /* لون بيج مريح */
+  min-height: 100vh;
+  direction: rtl;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+.tafsir-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.tafsir-main-title {
+  color: #1e3d2f;
+  font-size: 38px;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.tafsir-subtitle {
+  color: #b3893c;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 500;
+  margin: 0;
+}
+
+.gold-divider {
+  width: 150px;
+  height: 2px;
+  background-color: #dfb76c;
+  margin: 20px auto 0 auto;
+}
+
+.tafsir-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ستايل شبكة الكارتين الفخمين */
+.tafsir-books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+/* الكارت الإسلامي الملكي للكتب */
+.book-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  border: 1px solid #eae6df;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.book-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(30, 61, 47, 0.08);
+  border-color: #dfb76c;
+}
+
+.book-card::before {
+  content: "";
+  position: absolute;
+  top: 10px; bottom: 10px; left: 10px; right: 10px;
+  border: 1px dashed rgba(223, 183, 108, 0.4); /* برواز داخلي منقط ذهبي فخم */
+  border-radius: 12px;
+  pointer-events: none;
+}
+
+.book-icon {
+  font-size: 45px;
+  margin-bottom: 15px;
+}
+
+.book-card h2 {
+  color: #1e3d2f;
+  font-size: 26px;
+  margin: 0 0 10px 0;
+}
+
+.book-tag {
+  display: inline-block;
+  background-color: #f4ece1;
+  color: #b3893c;
+  padding: 4px 15px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.book-desc {
+  color: #556270;
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 0 0 25px 0;
+  text-align: justify;
+}
+
+.book-action-btn {
+  background-color: #1e3d2f;
+  color: #dfb76c;
+  border: none;
+  padding: 12px 30px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.book-card:hover .book-action-btn {
+  background-color: #dfb76c;
+  color: #1e3d2f;
+}
+
+/* قسم الفضل والمقولات أسفل الصفحة */
+.tafsir-insights-section {
+  background: linear-gradient(135deg, #1e3d2f, #152b21);
+  color: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  border: 1px solid #dfb76c;
+  box-shadow: 0 10px 30px rgba(30, 61, 47, 0.15);
+  text-align: center;
+}
+
+.insight-item h3 {
+  color: #dfb76c;
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.insight-item p {
+  font-size: 17px;
+  line-height: 1.8;
+  margin: 0;
+  font-weight: 300;
+}
+
+/* ستايل زر العودة للخلف */
+.back-to-books-btn {
+  background: none;
+  border: 1px solid #1e3d2f;
+  color: #1e3d2f;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 25px;
+  transition: all 0.2s;
+}
+
+.back-to-books-btn:hover {
+  background-color: #1e3d2f;
+  color: #dfb76c;
+}
+
+/* صندوق البحث الفخم */
+.search-mode-container {
+  animation: fadeInTafsirPage 0.4s ease-out;
+}
+
+.tafsir-search-box {
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 16px;
+  border: 1px solid #eae6df;
+  box-shadow: 0 4px 25px rgba(0,0,0,0.03);
+  margin-bottom: 40px;
+}
+
+.current-book-title {
+  color: #b3893c;
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 22px;
+  border-bottom: 1px dashed #eae6df;
+  padding-bottom: 15px;
+}
+
+.tafsir-form {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  min-width: 140px;
+}
+
+.input-group label {
+  color: #1e3d2f;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.input-group input {
+  padding: 12px;
+  border: 1px solid #eae6df;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+}
+
+.input-group input:focus {
+  border-color: #dfb76c;
+}
+
+.tafsir-btn {
+  background-color: #1e3d2f;
+  color: #dfb76c;
+  border: none;
+  padding: 13px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.tafsir-status {
+  text-align: center;
+  margin-top: 15px;
+  color: #b3893c;
+}
+
+/* كارت عرض النتيجة */
+.tafsir-result-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #dfb76c;
+  box-shadow: 0 10px 30px rgba(30,61,47,0.04);
+  overflow: hidden;
+}
+
+.result-header {
+  background-color: #1e3d2f;
+  color: #dfb76c;
+  padding: 15px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.book-label-badge {
+  background-color: #dfb76c;
+  color: #1e3d2f;
+  padding: 2px 10px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.quran-text-box {
+  background-color: #fdfcf9;
+  padding: 40px;
+  text-align: center;
+  border-bottom: 1px dashed #eae6df;
+}
+
+.quran-ayah {
+  font-size: 30px;
+  color: #2c3e50;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.tafsir-text-box {
+  padding: 35px;
+}
+
+.tafsir-text-box h3 {
+  color: #b3893c;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.tafsir-content {
+  font-size: 19px;
+  line-height: 1.9;
+  color: #4a5568;
+  text-align: justify;
+}
+
+@keyframes fadeInTafsirPage {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+
+
+@media (max-width: 768px) {
+  .tafsir-main-title {
+    font-size: 26px;
+  }
+
+  .tafsir-subtitle {
+    font-size: 15px;
+  }
+
+  /* كروت كتب التفسير */
+  .tafsir-books-grid {
+    grid-template-columns: 1fr; /* كارت واحد في الصف */
+    gap: 25px;
+  }
+
+  .book-card {
+    padding: 30px 20px;
+  }
+
+  /* صندوق مدخلات البحث */
+  .tafsir-form {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+
+  .tafsir-btn {
+    width: 100%;
+  }
+
+  /* كارت النتيجة والآية */
+  .quran-text-box {
+    padding: 25px 15px;
+  }
+
+  .quran-ayah {
+    font-size: 22px;
+  }
+
+  .tafsir-text-box {
+    padding: 20px 15px;
+  }
+
+  .tafsir-content {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,280 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  direction: rtl;            /* التنسيق بالكامل من اليمين للشمال */
+  background-color: #f7f5f0; /* لون بيج هادئ ووقور ومريح للعين */
+  color: #2c3e50;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ==========================================
+   2. ستايل قسم الخلفية الإسلامية (Hero Section)
+   ========================================== */
+.hero-section {
+  height: 65vh; /* يأخذ 65% من طول الشاشة */
+  /* رابط صورة زخارف عتيقة شيك من الإنترنت للتجربة الفورية، تقدر تغيرها بصورة من جهازك */
+  background-image: url('https://images.unsplash.com/photo-1590075865003-e48277adc558?q=80&w=1600'); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* ميزة حركة الـ Parallax السحرية أثناء السكرول */
+  position: relative;
+  margin-top: 60px; /* المسافة دي عشان المحتوى ماينزلش تحت الناف بار الثابت */
+}
+
+/* طبقة الفلتر الأخضر الإسلامي فوق الخلفية عشان الكلام يبان فخم */
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(135deg, rgba(15, 32, 23, 0.85), rgba(30, 61, 47, 0.8)); 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero-title {
+  color: #dfb76c; /* لون ذهبي */
+  font-size: 45px;
+  margin: 0 0 15px 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
+
+.hero-subtitle {
+  color: #ffffff;
+  font-size: 22px;
+  max-width: 700px;
+  margin: 0;
+  font-weight: 300;
+}
+
+.accent-line {
+  width: 100px;
+  height: 3px;
+  background-color: #dfb76c;
+  margin-top: 25px;
+  border-radius: 2px;
+}
+
+/* ==========================================
+   3. قسم نبذة عن مدرسة التلاوة المصرية
+   ========================================== */
+.about-egypt-reciters {
+  background-color: #ffffff;
+  padding: 60px 0;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+.section-title {
+  color: #1e3d2f; /* أخضر غامق */
+  font-size: 32px;
+  margin-bottom: 25px;
+}
+
+/* إضافة رمز إسلامي بسيط تحت العناوين الرئيسة */
+.section-title::after {
+  content: "✦";
+  display: block;
+  font-size: 18px;
+  color: #dfb76c;
+  margin-top: 5px;
+}
+
+.about-text {
+  font-size: 19px;
+  line-height: 1.8;
+  max-width: 900px;
+  margin: 0 auto;
+  color: #4a5568;
+}
+
+/* ==========================================
+   4. قسم كروت المقرئين (الـ Grid والكروت)
+   ========================================== */
+.reciters-section {
+  padding: 80px 0;
+}
+
+.reciters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* توزيع مرن متوافق مع الموبايل */
+  gap: 40px;
+  margin-top: 40px;
+}
+
+/* كارت المقرئ */
+.reciter-card {
+  background: #ffffff;
+  padding: 30px 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+  text-align: center;
+  border: 1px solid #eae6df;
+  transition: all 0.3s ease;
+}
+
+/* تأثير تحريك الكارت فوق عند تمرير الماوس */
+.reciter-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(30, 61, 47, 0.1);
+  border-color: #dfb76c; /* يقلب ذهبي عند الـ hover */
+}
+
+/* إطار الصورة الدائري المُنقّط */
+.img-frame {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 20px auto;
+  border-radius: 50%;
+  padding: 5px;
+  border: 2px dashed #dfb76c; /* الإطار الذهبي المتقطع الشيك */
+}
+
+/* صورة المقرئ نفسها */
+.reciter-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; /* دائرية تماماً */
+  object-fit: cover;  /* تمنع تمدد أو تشوه الصورة */
+  background-color: #f7f5f0;
+}
+
+.reciter-card h3 {
+  color: #1e3d2f;
+  font-size: 22px;
+  margin: 10px 0 5px 0;
+}
+
+/* شارة اللقب (مثل: الصوت الباكي) */
+.reciter-tag {
+  display: inline-block;
+  background-color: #f4ece1;
+  color: #b3893c;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.reciter-desc {
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+
+/* زر الثلاث شرط الافتراضي (مخفي في الشاشات الكبيرة) */
+.menu-toggle-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #dfb76c;
+  font-size: 30px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s;
+}
+
+
+/* تنسيق الأزرار الجديدة في الناف بار */
+.nav-btn-link {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+
+.nav-btn-link:hover, .nav-btn-link.active {
+  color: #dfb76c;
+  background-color: rgba(223, 183, 108, 0.1);
+}
+
+/* ==========================================
+   تنسيقات شاشات الموبايل والتابلت (تفعيل القائمة المنسدلة)
+   ========================================== */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: row; /* الحفاظ على اللوجو والزرار جنب بعض */
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    position: relative;
+  }
+
+  /* إظهار زر الثلاث شرط في الموبايل */
+  .menu-toggle-btn {
+    display: block;
+  }
+
+  /* تحويل قائمة اللينكات لقائمة منسدلة عمودية تختفي افتراضياً */
+  .nav-links {
+    display: none; /* إخفاء اللينكات */
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%; /* تظهر مباشرة تحت البار */
+    left: 0;
+    background-color: #1e3d2f; /* نفس لون الناف بار */
+    padding: 20px 0;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(223, 183, 108, 0.2);
+    gap: 15px;
+    z-index: 1000;
+  }
+
+  /* الكلاس السحري اللي بيظهر اللينكات لما تضغط على الـ ☰ */
+  .nav-links.show {
+    display: flex;
+    animation: slideDown 0.3s ease-out;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 10px 0;
+    font-size: 16px;
+    width: 100%;
+  }
+
+  /* أنيميشن ناعم لظهور القائمة */
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* تعديلات الـ Hero لشاشات الموبايل */
+  .hero-section {
+    height: 50vh;
+  }
+  .hero-title {
+    font-size: 28px;
+  }
+  .hero-subtitle {
+    font-size: 15px;
+  }
+  .about-text {
+    font-size: 15px;
+    padding: 0 15px;
+  }
+}
