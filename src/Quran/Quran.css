@@ -1,0 +1,170 @@
+.quran-page {
+  padding-top: 80px;
+  background-color: #f4f1ea; /* لون ورق المصاحف القديمة الهادئ */
+  min-height: 100vh;
+  direction: rtl;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+.quran-container {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* القائمة الجانبية للسور */
+.surahs-sidebar {
+  width: 300px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  height: 80vh;
+  overflow-y: auto; /* سكرول للسور */
+  position: sticky;
+  top: 100px;
+}
+
+.surahs-sidebar h3 {
+  color: #1e3d2f;
+  border-bottom: 2px solid #dfb76c;
+  padding-bottom: 10px;
+  margin-top: 0;
+}
+
+.surahs-sidebar ul {
+  list-style: none;
+  padding: 0; margin: 0;
+}
+
+.surahs-sidebar li {
+  display: flex;
+  align-items: center;
+  padding: 12px 10px;
+  border-bottom: 1px solid #f0ece3;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+}
+
+.surahs-sidebar li:hover {
+  background-color: #f4ece1;
+  color: #b3893c;
+}
+
+.surahs-sidebar li.active-surah {
+  background-color: #1e3d2f;
+  color: #dfb76c;
+}
+
+.surah-num {
+  font-weight: bold;
+  margin-left: 15px;
+  background: #f4ece1;
+  color: #1e3d2f;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 14px;
+}
+.surahs-sidebar li.active-surah .surah-num {
+  background: #dfb76c;
+}
+
+/* منطقة القراءة */
+.quran-text-area {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  min-height: 75vh;
+}
+
+.no-surah-selected {
+  text-align: center;
+  color: #777;
+  padding-top: 100px;
+}
+
+.surah-title {
+  text-align: center;
+  color: #b3893c;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.bismillah {
+  text-align: center;
+  font-size: 24px;
+  color: #1e3d2f;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+/* ستايل الآيات بالرسم العثماني */
+.ayaths-container {
+  font-size: 25px; /* خط كبير ومريح للقراءة */
+  line-height: 2.2;
+  text-align: justify;
+  color: #2c3e50;
+  word-spacing: 4px;
+}
+
+.ayah-text {
+  transition: color 0.2s;
+}
+.ayah-text:hover {
+  color: #b3893c; /* تلوين الآية عند الوقوف عليها بالماوس */
+}
+
+.ayah-number {
+  color: #dfb76c;
+  margin: 0 5px;
+  font-size: 22px;
+  display: inline-block;
+}
+
+.quran-loading, .surah-loading {
+  text-align: center;
+  padding: 100px;
+  font-size: 22px;
+  color: #1e3d2f;
+}
+
+
+@media (max-width: 768px) {
+  .quran-container {
+    flex-direction: column; /* ترتيب عمودي بدلاً من أفقي */
+    padding: 10px;
+  }
+
+  .surahs-sidebar {
+    width: 100%;
+    height: 250px; /* تحديد طول صغير مع سكرول للسور في الموبايل */
+    position: static; /* إلغاء التثبيت الجانبي */
+    margin-bottom: 20px;
+  }
+
+  .quran-text-area {
+    padding: 20px 15px;
+  }
+
+  .surah-title {
+    font-size: 24px;
+  }
+
+  .bismillah {
+    font-size: 19px;
+  }
+
+  .ayaths-container {
+    font-size: 20px; /* تصغير الخط قليلاً ليناسب شاشة الموبايل */
+    line-height: 2;
+  }
+}
